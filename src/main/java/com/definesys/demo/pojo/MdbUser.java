@@ -1,44 +1,63 @@
-package com.definesys.demo.domain;
+package com.definesys.demo.pojo;
 
 
 import java.util.Date;
 
 import com.definesys.mpaas.query.annotation.Column;
+import com.definesys.mpaas.query.annotation.RowID;
 import com.definesys.mpaas.query.annotation.Table;
 import com.definesys.mpaas.query.model.MpaasBasePojo;
 import lombok.Data;
 
 /**
  * 
- * @TableName MDB_COMMENT
+ * @TableName MDB_USER
  */
-@Table(value="MDB_COMMENT")
+@Table(value="MDB_USER")
 @Data
-public class MdbComment extends MpaasBasePojo  {
+public class MdbUser extends MpaasBasePojo {
     /**
-     * 主键
+     * 
      */
-
+    @RowID(sequence = "MDB_USER_S")
     @Column(value = "ID")
     private Long id;
 
     /**
-     * 用户id
+     * 登录账号
      */
-    @Column(value = "USER_ID")
-    private Long userId;
+    @Column(value = "ACCOUNT")
+    private String account;
 
     /**
-     * 电影id
+     * 手机号
      */
-    @Column(value = "MOVIE_ID")
-    private Long movieId;
+    @Column(value = "PHONE")
+    private String phone;
 
     /**
-     * 分数
+     * 昵称
      */
-    @Column(value = "STAR")
-    private Long star;
+    @Column(value = "NICKNAME")
+    private String nickname;
+
+    /**
+     * 密码
+     */
+    @Column(value = "PASSWORD")
+    private String password;
+
+    /**
+     * ADMIN(管理员)/GUEST(普通用户)
+     */
+    @Column(value = "ROLE")
+    private String role;
+
+    /**
+     * 头像id
+     */
+    @Column(value = "AVATAR")
+    private Long avatar;
 
     /**
      * 系统字段-版本号
@@ -69,11 +88,5 @@ public class MdbComment extends MpaasBasePojo  {
      */
     @Column(value = "LAST_UPDATE_DATE")
     private Date lastUpdateDate;
-
-    /**
-     * 评论内容
-     */
-    @Column(value = "CONTENT")
-    private String content;
 
 }

@@ -1,49 +1,45 @@
-package com.definesys.demo.domain;
+package com.definesys.demo.pojo;
 
-
+import java.io.Serializable;
 import java.util.Date;
 
 import com.definesys.mpaas.query.annotation.Column;
+import com.definesys.mpaas.query.annotation.RowID;
 import com.definesys.mpaas.query.annotation.Table;
 import com.definesys.mpaas.query.model.MpaasBasePojo;
 import lombok.Data;
 
 /**
  * 
- * @TableName MDB_ATTACHMENT
+ * @TableName MDB_MOVIE_ACTOR_REL
  */
-@Table(value="MDB_ATTACHMENT")
+@Table(value="MDB_MOVIE_ACTOR_REL")
 @Data
-public class MdbAttachment extends MpaasBasePojo {
+public class MdbMovieActorRel extends MpaasBasePojo {
     /**
      * 主键
      */
+    @RowID(sequence = "MDB_MOVIE_ACTOR_REL_S")
     @Column(value = "ID")
     private Long id;
 
     /**
-     * 附件uuid
+     * 演员ID
      */
-    @Column(value = "UUID")
-    private String uuid;
+    @Column(value = "ACTOR_ID")
+    private Long actorId;
 
     /**
-     * 附件名称
+     * 电影ID
      */
-    @Column(value = "ATTACHMENT_NAME")
-    private String attachmentName;
+    @Column(value = "MOVIE_ID")
+    private Long movieId;
 
     /**
-     * 标签（做扩展用）
+     * 角色类型 ACTOR(演员)/DIRECTOR(导演)/SCREENWRITER(编剧)
      */
-    @Column(value = "TAG")
-    private String tag;
-
-    /**
-     * 关联的业务单据号
-     */
-    @Column(value = "DOC_ID")
-    private String docId;
+    @Column(value = "ROLE")
+    private String role;
 
     /**
      * 系统字段-版本号
@@ -74,6 +70,5 @@ public class MdbAttachment extends MpaasBasePojo {
      */
     @Column(value = "LAST_UPDATE_DATE")
     private Date lastUpdateDate;
-
 
 }

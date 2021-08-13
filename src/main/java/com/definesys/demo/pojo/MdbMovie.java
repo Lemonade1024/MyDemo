@@ -1,9 +1,10 @@
-package com.definesys.demo.domain;
+package com.definesys.demo.pojo;
 
 
 import java.util.Date;
 
 import com.definesys.mpaas.query.annotation.Column;
+import com.definesys.mpaas.query.annotation.RowID;
 import com.definesys.mpaas.query.annotation.Table;
 import com.definesys.mpaas.query.model.MpaasBasePojo;
 import lombok.Data;
@@ -18,7 +19,7 @@ public class MdbMovie extends MpaasBasePojo  {
     /**
      * 主键
      */
-
+    @RowID(sequence = "MDB_MOVIE_S")
     @Column(value = "ID")
     private Long id;
 

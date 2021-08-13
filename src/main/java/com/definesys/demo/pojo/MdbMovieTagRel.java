@@ -1,61 +1,39 @@
-package com.definesys.demo.domain;
+package com.definesys.demo.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
 
 import com.definesys.mpaas.query.annotation.Column;
+import com.definesys.mpaas.query.annotation.RowID;
 import com.definesys.mpaas.query.annotation.Table;
 import com.definesys.mpaas.query.model.MpaasBasePojo;
 import lombok.Data;
 
 /**
  * 
- * @TableName MDB_ACTOR
+ * @TableName MDB_MOVIE_TAG_REL
  */
-@Table(value = "MDB_ACTOR")
+@Table(value="MDB_MOVIE_TAG_REL")
 @Data
-public class MdbActor extends MpaasBasePojo {
+public class MdbMovieTagRel extends MpaasBasePojo{
     /**
-     * 
+     * 主键
      */
+    @RowID(sequence = "MDB_MOVIE_TAG_REL_S")
     @Column(value = "ID")
     private Long id;
 
     /**
-     * 姓名
+     * 标签ID
      */
-    @Column(value = "NAME")
-    private String name;
+    @Column(value = "TAG_ID")
+    private Long tagId;
 
     /**
-     * 姓名拼音
+     * 电影编号
      */
-    @Column(value = "PINYIN")
-    private String pinyin;
-
-    /**
-     * 出生日期
-     */
-    @Column(value = "BIRTHDAY")
-    private Date birthday;
-
-    /**
-     * 出生地
-     */
-    @Column(value = "TOWN")
-    private String town;
-
-    /**
-     * 性别
-     */
-    @Column(value = "SEX")
-    private String sex;
-
-    /**
-     * 头像id
-     */
-    @Column(value = "AVATAR")
-    private Long avatar;
+    @Column(value = "MOVIE_ID")
+    private Long movieId;
 
     /**
      * 系统字段-版本号
@@ -86,11 +64,5 @@ public class MdbActor extends MpaasBasePojo {
      */
     @Column(value = "LAST_UPDATE_DATE")
     private Date lastUpdateDate;
-
-    /**
-     * 简介
-     */
-    @Column(value = "DESCRIPTION")
-    private String description;
 
 }

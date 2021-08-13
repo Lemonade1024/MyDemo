@@ -1,5 +1,4 @@
-package com.definesys.demo.domain;
-
+package com.definesys.demo.pojo;
 
 import java.util.Date;
 
@@ -11,53 +10,29 @@ import lombok.Data;
 
 /**
  * 
- * @TableName MDB_USER
+ * @TableName MDB_MOVIE_TAG
  */
-@Table(value="MDB_USER")
+@Table(value="MDB_MOVIE_TAG")
 @Data
-public class MdbUser extends MpaasBasePojo {
+public class MdbMovieTag extends MpaasBasePojo {
     /**
-     * 
+     * 主键
      */
-    @RowID(sequence = "MDB_USER_S")
+    @RowID(sequence = "MDB_MOVIE_TAG_S")
     @Column(value = "ID")
     private Long id;
 
     /**
-     * 登录账号
+     * 标签名称
      */
-    @Column(value = "ACCOUNT")
-    private String account;
+    @Column(value = "TAG_NAME")
+    private String tagName;
 
     /**
-     * 手机号
+     * 标签状态（ENABLE/DISABLE)
      */
-    @Column(value = "PHONE")
-    private String phone;
-
-    /**
-     * 昵称
-     */
-    @Column(value = "NICKNAME")
-    private String nickname;
-
-    /**
-     * 密码
-     */
-    @Column(value = "PASSWORD")
-    private String password;
-
-    /**
-     * ADMIN(管理员)/GUEST(普通用户)
-     */
-    @Column(value = "ROLE")
-    private String role;
-
-    /**
-     * 头像id
-     */
-    @Column(value = "AVATAR")
-    private Long avatar;
+    @Column(value = "STATUS")
+    private String status;
 
     /**
      * 系统字段-版本号

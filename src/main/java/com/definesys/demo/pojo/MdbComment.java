@@ -1,36 +1,45 @@
-package com.definesys.demo.domain;
+package com.definesys.demo.pojo;
+
 
 import java.util.Date;
 
 import com.definesys.mpaas.query.annotation.Column;
+import com.definesys.mpaas.query.annotation.RowID;
 import com.definesys.mpaas.query.annotation.Table;
 import com.definesys.mpaas.query.model.MpaasBasePojo;
 import lombok.Data;
 
 /**
  * 
- * @TableName MDB_MOVIE_TAG
+ * @TableName MDB_COMMENT
  */
-@Table(value="MDB_MOVIE_TAG")
+@Table(value="MDB_COMMENT")
 @Data
-public class MdbMovieTag extends MpaasBasePojo {
+public class MdbComment extends MpaasBasePojo  {
     /**
      * 主键
      */
+    @RowID(sequence = "MDB_COMMENT_S")
     @Column(value = "ID")
     private Long id;
 
     /**
-     * 标签名称
+     * 用户id
      */
-    @Column(value = "TAG_NAME")
-    private String tagName;
+    @Column(value = "USER_ID")
+    private Long userId;
 
     /**
-     * 标签状态（ENABLE/DISABLE)
+     * 电影id
      */
-    @Column(value = "STATUS")
-    private String status;
+    @Column(value = "MOVIE_ID")
+    private Long movieId;
+
+    /**
+     * 分数
+     */
+    @Column(value = "STAR")
+    private Long star;
 
     /**
      * 系统字段-版本号
@@ -61,5 +70,11 @@ public class MdbMovieTag extends MpaasBasePojo {
      */
     @Column(value = "LAST_UPDATE_DATE")
     private Date lastUpdateDate;
+
+    /**
+     * 评论内容
+     */
+    @Column(value = "CONTENT")
+    private String content;
 
 }

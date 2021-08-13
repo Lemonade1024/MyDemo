@@ -1,6 +1,6 @@
 package com.definesys.demo;
 
-import com.definesys.demo.domain.MdbUser;
+import com.definesys.demo.pojo.MdbUser;
 import com.definesys.mpaas.query.MpaasQueryFactory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
