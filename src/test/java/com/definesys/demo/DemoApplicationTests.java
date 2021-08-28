@@ -1,6 +1,5 @@
 package com.definesys.demo;
 
-import com.definesys.demo.pojo.MdbUser;
 import com.definesys.mpaas.query.MpaasQueryFactory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ class DemoApplicationTests {
     @Test
     void contextLoads() {
 
-        sw.buildQuery().doQuery(MdbUser.class).forEach(System.out::print);
     }
 
 }
